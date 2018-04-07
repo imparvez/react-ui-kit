@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.wrapper {
+	max-width: 1024px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+section.section {
+	padding: 10px 15px;
+}
+
+section.section > button {
+	margin: 0 5px 5px;
+}

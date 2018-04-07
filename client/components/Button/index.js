@@ -15,21 +15,57 @@ export default class Button extends Component{
 	    ].join(' ').trim();
 	}
 
+	createIconSize() {
+		if (this.props.size === 'isLarge') return 'isMedium';
+		if (this.props.size === 'isSmall') return 'isSmall';
+		return '';
+	}
+
+	renderLeftIcon() {
+	    return (
+	      <span>
+	        <span className={[styles.icon, styles[this.createIconSize()]].join(' ')}>
+	          <i className={[styles.fa, this.props.icon].join(' ')} />
+	        </span>
+	        <span style={{ lineHeight: this.props.size === 'isLarge' ? '32px' : 'auto' }}>
+	          {this.props.children}
+	        </span>
+	      </span>
+	    );
+	}
+
+	renderRightIcon() {
+	    return (
+	      <span>
+	        <span style={{ lineHeight: this.props.size === 'isLarge' ? '32px' : 'auto' }}>
+	          {this.props.children}
+	        </span>
+	        <span className={[styles.icon, styles[this.createIconSize()]].join(' ')}>
+	          <i className={[styles.fa, this.props.icon].join(' ')} />
+	        </span>
+	      </span>
+	    );
+	}
+
 	renderBody() {
 	    return this.props.safeHtml
 	      ? (<span dangerouslySetInnerHTML={{ __html: this.props.safeHtml }}></span>)
 	      : (<span>{this.props.children}</span>);
 	}
 
+	renderIcon() {
+		return this.props.isIconRight
+		? this.renderRightIcon()
+		: this.renderLeftIcon();
+	}
+
 	render(){
 		return(
-			<div className="button">
-				<button
-			        className={this.createClassName()}
-			    >
-			    {this.renderBody()}
-			    </button>
-			</div>
+			<button
+		        className={this.createClassName()}
+		    >
+		    {this.props.icon ? this.renderIcon() : this.renderBody()}
+		    </button>
 		)
 	}
 }
