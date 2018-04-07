@@ -52,4 +52,13 @@ module.exports = {
 	"cardFooter": "card-footer",
 	"cardFooterItem": "card-footer-item",
 	"isFullwidth": "is-fullwidth",
+	"control": "control",
+	"hasIcon": "has-icon",
+	"hasIconRight": "has-icon-right",
+	"input": "input",
+	"isActive": "is-active",
+    "isDisabled": "is-disabled",
+    "help": "help",
+    "isExpanded": "is-expanded",
+    "label": "__re-bulma_label",
 }

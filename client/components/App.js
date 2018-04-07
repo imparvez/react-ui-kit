@@ -10,6 +10,8 @@ import CardImage from './Cards/CardImage';
 import Image from './Image';
 import CardFooter from './Cards/CardFooter';
 import CardFooterItem from './Cards/CardFooterItem';
+import Input from './Form/Input';
+import Label from './Label'
 
 export default class App extends React.Component {
   render() {
@@ -63,6 +65,37 @@ export default class App extends React.Component {
 				<CardFooterItem>Delete</CardFooterItem>
 			</CardFooter>
 		</Cards>
+		<Label>Basic Input Tag</Label>
+		<Input type="text" placeholder="Text input" />
+		<Input 
+			type="text" 
+			placeholder="Text input" 
+			color="isSuccess"
+			type="text"
+			defaultValue="eg: parvez shaikh"
+			name="first name"
+			readOnly={false}
+			help={{
+				color: 'isSuccess',
+				text: 'This username is available',
+		    }}
+		    state="isActive"
+		    icon="fa fa-check"
+		    hasIcon
+		    isExpanded
+		/>
+		<Input
+			color="isDanger"
+			type="text"
+			placeholder="Email input"
+			defaultValue="hello@"
+			icon="fa fa-warning"
+			hasIconRight
+			help={{
+				color: 'isDanger',
+				text: 'This email is invalid',
+			}}
+		/>
       </div>);
   }
 }
