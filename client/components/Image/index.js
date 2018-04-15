@@ -17,6 +17,7 @@ export default class Image extends Component {
     return (
       <figure
         className={this.createClassName()}
+        style={this.props.style}
       >
         <img src={this.props.src} alt={this.props.alt} />
       </figure>
