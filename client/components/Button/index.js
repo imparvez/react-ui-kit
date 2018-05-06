@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import styles from '../styles';
+
+const spinAround = keyframes`
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+`;
 
 const ButtonComponent = styled.button`
     -moz-appearance: none;
@@ -261,6 +270,34 @@ const ButtonComponent = styled.button`
 		&:first-child {
 			margin-left: -2px;
 			margin-right: 4px;
+		}
+	}
+
+	&.is-loading {
+		color: transparent !important;
+		pointer-events: none;
+
+		&:after {
+			left: 50%;
+			margin-left: -8px;
+			margin-top: -8px;
+			position: absolute;
+			top: 50%;
+			position: absolute !important;
+		}
+
+		&:after {
+			-webkit-animation: ${spinAround} 500ms infinite linear;
+			animation: ${spinAround} 500ms infinite linear;
+			border: 2px solid #d3d6db;
+			border-radius: 290486px;
+			border-right-color: transparent;
+			border-top-color: transparent;
+			content: "";
+			display: block;
+			height: 16px;
+			position: relative;
+			width: 16px;
 		}
 	}
 `;
