@@ -42,6 +42,7 @@ export default class App extends React.Component {
 			<Button buttonStyle="isOutlined" color="isInfo">Outlined</Button> 
 			<Button buttonStyle="isOutlined" color="isSuccess">Outlined</Button> 
 			<Button buttonStyle="isOutlined" color="isDanger">Outlined</Button> 
+			<Button buttonStyle="isOutlined" color="isWarning">Outlined</Button> 
       	</section>
       	<section className="section">
 			<Button state="isLoading">Loading</Button> 
