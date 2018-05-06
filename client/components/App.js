@@ -155,8 +155,8 @@ export default class App extends React.Component {
 			<Image src="http://placehold.it/64x64" size="is64X64" style={{ marginBottom: '5px' }} />
 			<Image src="http://placehold.it/128x128" size="is128X128" style={{ marginBottom: '5px' }} />
 			<Image src="http://placehold.it/256x256" size="is256X256" style={{ marginBottom: '5px' }} />
-			<Image src="http://placehold.it/480x480" ratio="isSquare" style={{ marginBottom: '5px' }} />
-			<Image src="http://placehold.it/480x320" ratio="is3By2" style={{ marginBottom: '5px' }} />
+			<Image src="http://placehold.it/480x480" size="is480X480" style={{ marginBottom: '5px' }} />
+			<Image src="http://placehold.it/480x320" size="is480X320" style={{ marginBottom: '5px' }} />
         </section>
       </div>);
   }

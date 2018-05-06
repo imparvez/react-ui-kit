@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from '../styles';
+import styled from 'styled-components';
+
+const LabelComponent = styled.label`
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+`;
 
 export default class Label extends Component{
 
 	createClassName() {
     return [
-      styles.label,
       this.props.className,
     ].join(' ').trim();
   }
@@ -14,9 +19,11 @@ export default class Label extends Component{
 
 	render(){
 		return(
-		  <label {...this.props} className={this.createClassName()}>
+		  <LabelComponent 
+        {...this.props} 
+        className={this.createClassName()}>
         {this.props.children}
-      </label>
+      </LabelComponent>
 		)
 	}
 }
